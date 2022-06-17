@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import "./Feed.css";
 import InputOption from "./InputOption";
 
@@ -9,16 +9,27 @@ import SubscriptionsIcon from "@mui/icons-material/Subscriptions";
 import EventNoteIcon from "@mui/icons-material/EventNote";
 import CalendarViewDayIcon from "@mui/icons-material/CalendarViewDay";
 import Post from "./Post";
-
+// import {db} from "./firebase";
 
 const Feed = () => {
   const [posts, setPosts] = useState([
+    {name:"Guri Sran",description:"loreemIpsum",message:"What'sUp People"},
+    {name:"Guri Sran",description:"loreemIpsum",message:"Life Is Greate"},
+    {name:"Guri Sran",description:"loreemIpsum",message:"I Love React"},
 
-    {name:"Gurvinder Singh", description:"Lorem Ipsum", message: "Hi How Are You"},
-    {name:"Hapreet Kaur", description:"Kuch Bhi Keh Sakte Ho", message: "What's Up Guys"},
-    {name:"Mr Black", description:"Low level Programmer", message: "Going To India"},
   ]);
 
+  // useEffect(() =>{
+  //       db.collection("posts").onSnapshot(snapshot =>(
+  //         setPosts(snapshot.docs.map(doc =>(
+  //           {
+  //             id: doc.id,
+  //             data:doc.data(),
+
+  //           }
+  //         )))
+  //       ))
+  // }, [])
 
   //post Handler
   const sendPost = (event) => {
@@ -50,9 +61,15 @@ const Feed = () => {
         </div>
       </div>
       {posts.map((post) => (
-        <Post name={post.name} description={post.description} message={post.message}/>
+        <Post  name={post.name}
+        description={post.description}
+        message={post.message}/>
       ))}
-     
+      <Post
+        name="Guri Sran"
+        description="loreemIpsum"
+        message="React Is Great"
+      />
     </div>
   );
 };
