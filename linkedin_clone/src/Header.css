@@ -1,5 +1,5 @@
 .header {
-  position: static;
+  position: sticky;
   top: 0;
   display: flex;
   justify-content: space-evenly;
@@ -12,9 +12,12 @@
 
 .header__left {
   display: flex;
+
 }
 .header__left > img {
   object-fit: contain;
+  
+
   height: 50px;
 }
 

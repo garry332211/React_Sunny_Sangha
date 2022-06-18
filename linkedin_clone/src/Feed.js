@@ -9,44 +9,57 @@ import SubscriptionsIcon from "@mui/icons-material/Subscriptions";
 import EventNoteIcon from "@mui/icons-material/EventNote";
 import CalendarViewDayIcon from "@mui/icons-material/CalendarViewDay";
 import Post from "./Post";
-// import {db} from "./firebase";
+
+const dummyData = [
+  {
+    message: "What'sUp People",
+  },
+  {
+    message: "Life Is Greate",
+  },
+  {
+    
+    message: "I Love React",
+  },
+  {
+    message: "Linkedin Clone Completed ",
+  },
+];
 
 const Feed = () => {
-  const [posts, setPosts] = useState([
-    {name:"Guri Sran",description:"loreemIpsum",message:"What'sUp People"},
-    {name:"Guri Sran",description:"loreemIpsum",message:"Life Is Greate"},
-    {name:"Guri Sran",description:"loreemIpsum",message:"I Love React"},
+  const [message, setInput] = useState("");
+  const [showMsg, setShowMsg] = useState(dummyData);
 
-  ]);
-
-  // useEffect(() =>{
-  //       db.collection("posts").onSnapshot(snapshot =>(
-  //         setPosts(snapshot.docs.map(doc =>(
-  //           {
-  //             id: doc.id,
-  //             data:doc.data(),
-
-  //           }
-  //         )))
-  //       ))
-  // }, [])
+  const inputTaker = (event) => {
+    setInput(event.target.value);
+  };
 
   //post Handler
   const sendPost = (event) => {
     event.preventDefault();
 
-    
+    console.log(message);
+    const data = {
+      message,
+    };
+    if (message) {
+      setShowMsg((ls) => [...ls, data]);
+      setInput("");
+    }
   };
   return (
     <div className="feed">
       <div className="feed__inputContainer">
         <div className="feed__input">
           <CreateIcon />
-          <form>
-            <input type="text" placeholder="Start a Post" />
-            <button onClick={sendPost} type="submit">
-              Send
-            </button>
+          <form onSubmit={sendPost}>
+            <input
+              type="text"
+              placeholder="Start a Post"
+              onChange={inputTaker}
+              value={message}
+            />
+            <button type="submit">Send</button>
           </form>
         </div>
         <div className="feed__inputoptions">
@@ -60,16 +73,13 @@ const Feed = () => {
           />
         </div>
       </div>
-      {posts.map((post) => (
-        <Post  name={post.name}
-        description={post.description}
-        message={post.message}/>
-      ))}
-      <Post
-        name="Guri Sran"
-        description="loreemIpsum"
-        message="React Is Great"
-      />
+      {showMsg.map((a, key1) => (
+        <Post
+          key={key1}
+          message={a.message}
+          name="Guri"
+          description="gurisran@gmail.comn"
+         /> ))}
     </div>
   );
 };

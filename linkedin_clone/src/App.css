@@ -7,4 +7,8 @@
 
 .app_body {
   display: flex;
+  justify-content: space-evenly;
+  margin-top:50px;
+ 
 }
+
