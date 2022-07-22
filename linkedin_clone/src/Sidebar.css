@@ -6,7 +6,6 @@
   text-align: center;
   height: fit-content;
   margin-left: 25rem;
-  
 }
 
 .sidebar__avatar {
@@ -30,7 +29,7 @@
   font-size: 12px;
 }
 .sidebar__top h2 {
-  font-size:18px;
+  font-size: 18px;
 }
 .sidebar__top > img {
   margin-bottom: -20px;
@@ -136,11 +135,10 @@
   margin-top: 3px;
   margin-left: 5px;
 }
-.sidebar__bottom2 .more  {
-  color:rgb(0, 0, 0);
+.sidebar__bottom2 .more {
+  color: rgb(0, 0, 0);
   text-decoration: underline;
   display: flex;
   justify-content: space-evenly;
   cursor: pointer;
- 
 }

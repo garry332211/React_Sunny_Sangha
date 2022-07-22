@@ -1,27 +1,26 @@
 import { Avatar } from "@mui/material";
-import PeopleAltIcon from '@mui/icons-material/PeopleAlt';
+import PeopleAltIcon from "@mui/icons-material/PeopleAlt";
 import React from "react";
 import "./Sidebar.css";
 
-const Sidebar = ({avatar}) => {
+const Sidebar = ({ avatar }) => {
+  //resuabl functon for recent section
+  const recentItem = (topic) => (
+    <div className="sidebar__recentItems">
+      <span className="sidebar__hash">#</span>
+      <p>{topic}</p>
+    </div>
+  );
 
-    //resuabl functon for recent section
-    const recentItem =(topic) => (
-        <div className="sidebar__recentItems">
-            <span className="sidebar__hash">#</span>
-            <p>{topic}</p>
-        </div>
-    );
+  const moreDetailes = (items) => (
+    <div className="sidebar__recentItems2">
+      <span className="sidebar__icon">
+        <PeopleAltIcon />
+      </span>
+      <p>{items}</p>
+    </div>
+  );
 
-    const moreDetailes =(items) =>(
-      <div className="sidebar__recentItems2">
-            <span className="sidebar__icon"><PeopleAltIcon />
-            </span>
-            <p>{items}</p>
-        </div>
-    );
-        
-    
   return (
     <div className="sidebar">
       <div className="sidebar__top">
@@ -29,13 +28,13 @@ const Sidebar = ({avatar}) => {
           src="https://images.unsplash.com/photo-1579546929662-711aa81148cf?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
           alt=""
         />
-       {avatar && <Avatar className="sidebar__avatar"  src={avatar}/>}
+        {avatar && <Avatar className="sidebar__avatar" src={avatar} />}
         <h2>Gurvinder Singh</h2>
-        <h4>gurvinder.singh@gmail.com</h4>
+        <h4>gurvindersinghoo7@hotmail.com</h4>
       </div>
       <div className="sidebar__stats">
         <div className="sidebar__stat">
-          <p>Who Viewed You</p>
+          <p>Profile Viewers</p>
           <p className="sidebar__statNumber">1,584</p>
         </div>
 
@@ -47,23 +46,22 @@ const Sidebar = ({avatar}) => {
 
       <div className="sidebar__bottom">
         <p>Recent</p>
-        {recentItem('reactjs')}
-        {recentItem('programming')}
-        {recentItem('softwareengineering')}
-        {recentItem('webdevelopment')}
-        {recentItem('r&d')}
+        {recentItem("reactjs")}
+        {recentItem("programming")}
+        {recentItem("softwareengineering")}
+        {recentItem("webdevelopment")}
+        {recentItem("r&d")}
       </div>
-        
-        <div className="sidebar__bottom2">
+
+      <div className="sidebar__bottom2">
         <p>Followers</p>
-        {moreDetailes("Harpreet Kaur")}
-        {moreDetailes("Darpan Patil")}
-        {moreDetailes("Verma")}
+        {moreDetailes("Joshp Greenbury")}
+        {moreDetailes("Rohit Sharma")}
+        {moreDetailes("Connor Hall")}
         {moreDetailes("Matthew Blinkinsop")}
-       
+
         <span className="more">More..</span>
-        </div>
-    
+      </div>
     </div>
   );
 };

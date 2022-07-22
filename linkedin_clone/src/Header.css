@@ -12,11 +12,9 @@
 
 .header__left {
   display: flex;
-
 }
 .header__left > img {
   object-fit: contain;
-  
 
   height: 50px;
 }
@@ -41,4 +39,3 @@
 .header__right {
   display: flex;
 }
-

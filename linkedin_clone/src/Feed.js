@@ -12,24 +12,16 @@ import Post from "./Post";
 
 const dummyData = [
   {
-    message: "What'sUp People",
+    message: "Hi Everyone",
   },
   {
-    message: "Life Is Greate",
-  },
-  {
-    
-    message: "I Love React",
-  },
-  {
-    message: "Linkedin Clone Completed ",
+    message: "LinkedIn Clone Completed",
   },
 ];
 
 const Feed = () => {
   const [message, setInput] = useState("");
   const [showMsg, setShowMsg] = useState(dummyData);
-
   const inputTaker = (event) => {
     setInput(event.target.value);
   };
@@ -79,7 +71,8 @@ const Feed = () => {
           message={a.message}
           name="Guri"
           description="gurisran@gmail.comn"
-         /> ))}
+        />
+      ))}
     </div>
   );
 };
